@@ -1,0 +1,19 @@
+<h2>Log Details</h2>
+
+<hr/>
+<div *ngIf="log">
+  <div>
+    <label><b>Log ID: </b></label> {{log.id}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{log.description}}
+  </div>
+  <div>
+    <label><b>Log Type: </b></label> {{log.logType}}
+  </div>
+</div>
+
+<br>
+<br>
+  <button (click)="list()" class="btn btn-primary">Back to Log List</button>
+<br>

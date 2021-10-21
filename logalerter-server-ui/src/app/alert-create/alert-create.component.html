@@ -1,0 +1,39 @@
+<h2>Create Alert</h2>
+
+<hr/>
+<form (ngSubmit)="onSubmit()" #alertForm="ngForm">
+  <div class="form-group">
+    <label><b>Label: </b></label>
+    <input type="text" class="form-control" id="label"
+           required
+           [(ngModel)]="alert.label" name="label"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Regex: </b></label>
+    <input type="text" class="form-control" id="regex"
+           required
+           [(ngModel)]="alert.regex" name="regex"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Log ID: </b></label>
+    <input type="text" class="form-control" id="logId"
+           required
+           [(ngModel)]="alert.logId" name="logId"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Severity: </b></label>
+    <input type="text" class="form-control" id="severity"
+           required
+           [(ngModel)]="alert.severity" name="severity"
+           #name="ngModel">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<br>
+<br>
+  <button (click)="list()" class="btn btn-primary">Back to Alert List</button>
+<br>

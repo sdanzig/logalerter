@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>User List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Full Name</th>
+                    <th>Contact Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | async">
+                    <td>{{user.id}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.fullName}}</td>
+                    <td>{{user.contactInfo}}</td>
+                    <td>
+                        <button (click)="userDetails(user.email)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

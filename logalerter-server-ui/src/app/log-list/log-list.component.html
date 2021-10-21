@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Log List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Log Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let log of logs | async">
+                    <td>{{log.id}}</td>
+                    <td>{{log.description}}</td>
+                    <td>{{log.logType}}</td>
+                    <td>
+                        <button (click)="logDetails(log.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

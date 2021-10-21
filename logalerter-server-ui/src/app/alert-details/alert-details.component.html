@@ -1,0 +1,59 @@
+<h2>Alert Details</h2>
+
+<hr/>
+<div *ngIf="alert">
+  <div>
+    <label><b>Log ID: </b></label> {{alert.id}}
+  </div>
+  <div>
+    <label><b>Label: </b></label> {{alert.label}}
+  </div>
+  <div>
+    <label><b>Regex: </b></label> {{alert.regex}}
+  </div>
+  <div>
+    <label><b>Log ID: </b></label> {{alert.logId}}
+  </div>
+  <div>
+    <label><b>Severity: </b></label> {{alert.severity}}
+  </div>
+  <div>
+    <label><b>Occurrences: </b></label> {{alert.occurrences}}
+  </div>
+  <div>
+    <label><b>Last Occurrence: </b></label> {{alert.lastOccurrence}}
+  </div>
+  <div>
+    <label><b>Last User Email: </b></label> {{alert.lastUserEmail}}
+  </div>
+
+  <h3>Notes</h3>
+
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Info</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let note of notes | async">
+        <td>{{note.id}}</td>
+        <td>{{note.email}}</td>
+        <td>{{note.info}}</td>
+<!--        <td>
+          <button (click)="deleteNote(note.id)" class="btn btn-info" style="margin-left: 10px">Delete</button>
+        </td> -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+<br>
+  <button (click)="modifyAlert(alert.id)" class="btn btn-info" style="margin-left: 10px">Modify Alert</button>&nbsp;
+  <button (click)="list()" class="btn btn-primary">Back to Alert List</button>
+<br>

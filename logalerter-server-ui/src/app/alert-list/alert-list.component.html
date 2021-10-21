@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Alert List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Label</th>
+                    <th>Regex</th>
+                    <th>Log ID</th>
+                    <th>Severity</th>
+                    <th>Occurrences</th>
+                    <th>Last Occurrence</th>
+                    <th>Last User Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alert of alerts | async">
+                    <td>{{alert.id}}</td>
+                    <td>{{alert.label}}</td>
+                    <td>{{alert.regex}}</td>
+                    <td>{{alert.logId}}</td>
+                    <td>{{alert.severity}}</td>
+                    <td>{{alert.occurrences}}</td>
+                    <td>{{alert.lastOccurrence}}</td>
+                    <td>{{alert.lastUserEmail}}</td>
+                    <td>
+                        <button (click)="alertDetails(alert.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div>
+        <a routerLink="/create-alert" class="nav-link" routerLinkActive="active">Create New Alert</a>
+    </div>
+</div>

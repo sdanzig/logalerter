@@ -1,0 +1,48 @@
+<h2>Modify Alert</h2>
+
+<hr/>
+<form (ngSubmit)="onSubmit()" #alertForm="ngForm">
+  <div class="form-group">
+    <label><b>Label: </b></label>
+    <input type="text" class="form-control" id="label"
+           required
+           [(ngModel)]="alert.label" name="label"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Regex: </b></label>
+    <input type="text" class="form-control" id="regex"
+           required
+           [(ngModel)]="alert.regex" name="regex"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Log ID: </b></label>
+    <input type="text" class="form-control" id="logId"
+           required
+           [(ngModel)]="alert.logId" name="logId"
+           #name="ngModel">
+  </div>
+  <div>
+    <label><b>Severity: </b></label>
+    <input type="text" class="form-control" id="severity"
+           required
+           [(ngModel)]="alert.severity" name="severity"
+           #name="ngModel">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<form (ngSubmit)="onSubmitNote(alert.id)" #alertForm="ngForm">
+  <div class="form-group">
+    <label><b>New Note: </b></label>
+    <input type="textarea" class="form-control" id="note"
+           required
+           [(ngModel)]="newNote.info" name="note"
+           #name="ngModel">
+  </div>
+  <button type="submit" class="btn btn-success">Add Note</button>
+</form>
+<br>
+<br>
+  <button (click)="alertDetails(alert.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+<br>

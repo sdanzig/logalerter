@@ -1,0 +1,1 @@
+wmic Path win32_process Where "CommandLine Like '%logalerter%client%'" Call Terminate
